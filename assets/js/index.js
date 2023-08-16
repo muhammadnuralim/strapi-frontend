@@ -7,9 +7,9 @@ function updateStatus(id, status) {
         status: status dari task (boolean)
 
     */
-    let xhr = new XMLHttpRequest()
-    let url = "http://localhost:1337/api/tasks/" + id
-    const token = "facf31708850f70e61d38ad77de00e3f05fb4f90459e0c23b34f0bd687e92c2a5db05e6924e643dd529245933c1c3162da9fe100337e0548f58250e7279c6bc180b3578f1c03b94510b3bd7e5b2aff41ade5a52851ba0bbe883c67c66d10fbdaf493a147c5faf70f42cc608c9c2cef139cb79a8a92028f62ef2679573639d12b"
+    const token = GANTI_DENGAN_API_TOKEN_KALIAN
+    let xhr = new XMLHttpRequest();
+    let url = GANTI_DENGAN_API_KALIAN;
     
     let statusData = JSON.stringify({
         data: {
@@ -46,10 +46,9 @@ function checkStatus(id) {
     parameter:
         id (int): id dari tasks
     */
-    let xhr = new XMLHttpRequest()
-    let url = "http://localhost:1337/api/tasks/" + id
-    const token = "facf31708850f70e61d38ad77de00e3f05fb4f90459e0c23b34f0bd687e92c2a5db05e6924e643dd529245933c1c3162da9fe100337e0548f58250e7279c6bc180b3578f1c03b94510b3bd7e5b2aff41ade5a52851ba0bbe883c67c66d10fbdaf493a147c5faf70f42cc608c9c2cef139cb79a8a92028f62ef2679573639d12b"
-
+    const token = GANTI_DENGAN_API_TOKEN_KALIAN
+    let xhr = new XMLHttpRequest();
+    let url = GANTI_DENGAN_API_KALIAN;
     xhr.open("GET", url, true);
     xhr.setRequestHeader("Authorization", `Bearer ${token}`)
     xhr.onreadystatechange = function () {
@@ -99,9 +98,9 @@ let doneItem = document.getElementById("done");
 window.onload = function () {
     /* Fungsi yang akan dijalankan ketika page load */
     //buat object ajax dan url data
+    const token = GANTI_DENGAN_API_TOKEN_KALIAN
     let xhr = new XMLHttpRequest();
-    let url = "http://localhost:1337/api/tasks"; //ganti nama file sesuai nama file json kalian
-    const token = "facf31708850f70e61d38ad77de00e3f05fb4f90459e0c23b34f0bd687e92c2a5db05e6924e643dd529245933c1c3162da9fe100337e0548f58250e7279c6bc180b3578f1c03b94510b3bd7e5b2aff41ade5a52851ba0bbe883c67c66d10fbdaf493a147c5faf70f42cc608c9c2cef139cb79a8a92028f62ef2679573639d12b"
+    let url = GANTI_DENGAN_API_KALIAN;
     xhr.open("GET", url, true);
     xhr.setRequestHeader("Authorization", `Bearer ${token}`)
     xhr.onreadystatechange = function () {
@@ -178,9 +177,9 @@ const addForm = document.getElementById("add-form");
 addForm.addEventListener("submit", function (event) {
     /* fungsi untuk menambahkan task baru */
     event.preventDefault();
-    const token = "facf31708850f70e61d38ad77de00e3f05fb4f90459e0c23b34f0bd687e92c2a5db05e6924e643dd529245933c1c3162da9fe100337e0548f58250e7279c6bc180b3578f1c03b94510b3bd7e5b2aff41ade5a52851ba0bbe883c67c66d10fbdaf493a147c5faf70f42cc608c9c2cef139cb79a8a92028f62ef2679573639d12b"
+    const token = GANTI_DENGAN_API_TOKEN_KALIAN
     let xhr = new XMLHttpRequest();
-    let url = "http://localhost:1337/api/tasks";
+    let url = GANTI_DENGAN_API_KALIAN;
     
     //seleksi nilai dari input title dan desc
     let title = document.getElementById("title").value;
@@ -243,9 +242,9 @@ myModalDelete.addEventListener("show.bs.modal", function (event) {
     //ketika tombol delte diklik jalankan fungsi hapus
     deleteForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        let xhr = new XMLHttpRequest()
-        let url = "http://localhost:1337/api/tasks/" + dataId.value
-        const token = "facf31708850f70e61d38ad77de00e3f05fb4f90459e0c23b34f0bd687e92c2a5db05e6924e643dd529245933c1c3162da9fe100337e0548f58250e7279c6bc180b3578f1c03b94510b3bd7e5b2aff41ade5a52851ba0bbe883c67c66d10fbdaf493a147c5faf70f42cc608c9c2cef139cb79a8a92028f62ef2679573639d12b"
+        const token = GANTI_DENGAN_API_TOKEN_KALIAN
+        let xhr = new XMLHttpRequest();
+        let url = GANTI_DENGAN_API_KALIAN;
 
         xhr.open("DELETE", url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
@@ -281,9 +280,9 @@ myModalEdit.addEventListener("show.bs.modal", function (event) {
     let dataId = event.relatedTarget.attributes["data-id"];
     // console.log(dataId.value)
     //get data with specific id 
-    let xhr = new XMLHttpRequest()
-    let url = "http://localhost:1337/api/tasks/" + dataId.value
-    const token = "facf31708850f70e61d38ad77de00e3f05fb4f90459e0c23b34f0bd687e92c2a5db05e6924e643dd529245933c1c3162da9fe100337e0548f58250e7279c6bc180b3578f1c03b94510b3bd7e5b2aff41ade5a52851ba0bbe883c67c66d10fbdaf493a147c5faf70f42cc608c9c2cef139cb79a8a92028f62ef2679573639d12b"
+    const token = GANTI_DENGAN_API_TOKEN_KALIAN
+    let xhr = new XMLHttpRequest();
+    let url = GANTI_DENGAN_API_KALIAN;
 
     xhr.open("GET", url, true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=utf-8");
@@ -304,8 +303,9 @@ myModalEdit.addEventListener("show.bs.modal", function (event) {
     let editForm = document.getElementById("edit-form");
     editForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        let xhr = new XMLHttpRequest()
-        let url = "http://localhost:1337/api/tasks/" + dataId.value
+        const token = GANTI_DENGAN_API_TOKEN_KALIAN
+        let xhr = new XMLHttpRequest();
+        let url = GANTI_DENGAN_API_KALIAN; + dataId.value
 
         let newTitle = document.getElementById("edit-title").value;
         let newdesc = document.getElementById("edit-description").value;
